@@ -21,7 +21,7 @@
         }
 
         public function fetchdata() {
-            $result = mysqli_query($this->dbcon, "SELECT * FROM mynotes");
+            $result = mysqli_query($this->dbcon, "SELECT * FROM mynotes ORDER BY date DESC");
             return $result;
         }
 
@@ -30,7 +30,7 @@
             return $result;
         }
 
-        public function update($name, $detail) {
+        public function update($name, $detail, $noteid) {
             $result = mysqli_query($this->dbcon, "UPDATE mynotes SET name = '$name', detail = '$detail' WHERE id = '$noteid'");
             return $result;
         }
